@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Annotation Results</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="/">Annotation Tool</a>
+    </nav>
+    <div class="container">
+        <h1 class="text-center text-success my-4">Annotation Results</h1>
+        <h3 class="text-center">UMAP Plot</h3>
+        <div class="text-center">
+            <iframe src="{{ umap_plot_url }}" width="800" height="600" class="border rounded"></iframe>
+        </div>
+
+        <div class="text-center my-4">
+            <h3>Download Annotated Data</h3>
+            <a href="{{ download_link }}" download class="btn btn-success">Download Annotated Data</a>
+        </div>
+    </div>
+</body>
+</html>
+
+
