@@ -1,39 +1,59 @@
-Automating Rare Cell Type Annotation in Human Fetal Skin Development
+# Automating Rare Cell Type Annotation in Human Fetal Skin Development
 
-Project Overview
-This project automates the annotation of rare cell types from single-cell RNA sequencing (scRNA-seq) data, specifically in the context of human fetal skin development. It integrates machine learning techniques, advanced bioinformatics processing, and an interactive web interface to streamline annotation workflows.
+This project provides an automated solution via a web-based interface for annotating rare cell types from single-cell RNA sequencing (scRNA-seq) data, specifically targeting human fetal skin development.
 
-Objectives
-- Machine Learning Model: Developed a Random Forest classifier to accurately predict cell types based on gene expression profiles.
-- Automated Data Processing: Implemented comprehensive preprocessing steps including filtering, normalization, scaling, dimensionality reduction (PCA), and clustering (Leiden algorithm).
-- User-Friendly Interface: Built a responsive web-based tool enabling researchers to upload datasets, automatically perform annotation, and visualize results interactively.
+---
 
-Data Source
-- Dataset: Single-cell RNA-seq data from human fetal skin (GEO accession: GSE179565).
-- Tools Used for Data Retrieval: GEOquery (R), requests, pandas.
+##  Project Objectives
 
- Methodology
- Data Preprocessing
-- Inspection & Filtering: Used scanpy and pandas to manage datasets, remove low-quality cells, and reduce data noise.
-- Normalization & Scaling: Applied methods such as normalize_total, log1p, and data scaling using Scanpy.
-- Dimensionality Reduction: Performed PCA for feature extraction.
+- **Complete Automation:** Streamline data preprocessing, automate prediction of rare cell types using a pre-trained Machine Learning model, and generate interactive visualizations.
+- **Accessibility:** User-friendly web interface for researchers without extensive bioinformatics expertise.
+- **Applicability:** Precise annotation of rare cells in human fetal skin to support developmental biology research.
 
- Annotation & Model Training
-- Clustering: Identified cell clusters using the Leiden algorithm.
-- Marker Genes: Used Scanpy's rank_genes_groups and the CellMarker database for manual cell type annotation.
-- Model Development: Trained a Random Forest classifier (using scikit-learn) on manually annotated data, achieving automated and reproducible cell type predictions.
+---
 
-Web Interface
-- Framework: Developed using Flask.
-- Visualization: Generated interactive UMAP plots with Plotly for intuitive visualization of annotated cells.
-- Accessibility: Easy-to-use file upload/download features supported by HTML/CSS and Bootstrap for responsive design.
+##  Data Source
 
- Tools & Technologies
-- Data Processing: Scanpy, pandas, CellMarker
-- Machine Learning: scikit-learn, joblib
-- Web Development: Flask, Plotly, Bootstrap, HTML/CSS
+- **Repository:** [Gene Expression Omnibus (GEO)](https://www.ncbi.nlm.nih.gov/geo/)
+- **GEO Accession Number:** `GSE179565`
+- **Data Type:** Human fetal skin scRNA-seq dataset.
 
-Results
-- Developed a robust pipeline to automate and simplify rare cell type annotation.
-- Enabled interactive exploration and visualization of single-cell datasets.
+---
+
+## ⚙️ Methodology and Key Steps
+
+### 1️- Automated Data Preprocessing
+
+- **Filtering:** Remove low-quality cells and rarely expressed genes (`Scanpy`).
+- **Normalization and Scaling:** Normalize gene expression values for comparability (`Scanpy`).
+- **Dimensionality Reduction:** PCA to reduce complexity (`Scanpy`).
+- **Clustering:** Leiden algorithm to identify cell clusters (`Scanpy`).
+
+### 2️- Machine Learning-Based Automated Annotation
+
+- **Model Training:** Random Forest classifier trained on manually annotated data (`scikit-learn`).
+- **Model Serialization:** Saved model for future use (`joblib`).
+- **Performance Evaluation:** Accuracy evaluation using confusion matrix and metrics.
+
+### 3️- User-Friendly Web Interface Development
+
+- **Frontend Development:** Built with Flask, Bootstrap, and HTML/CSS.
+- **Interactive Visualizations:** UMAP plots for intuitive exploration (`Plotly`).
+- **Data Accessibility:** Easy data upload and download functionality for annotated results.
+
+---
+
+##  How to Use the Tool
+
+### Prerequisites
+- Python ≥ 3.8
+- Recommended: virtual environment (`conda` or `venv`)
+
+### Quick Installation
+```bash
+git clone <repository-url>
+cd <repository-name>
+pip install -r requirements.txt
+python app.py
+
 
