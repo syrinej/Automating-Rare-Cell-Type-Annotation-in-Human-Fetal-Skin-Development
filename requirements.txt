@@ -1,0 +1,9 @@
+pandas
+numpy
+scanpy
+scikit-learn
+joblib
+Flask
+plotly
+bootstrap-flask
+requests
